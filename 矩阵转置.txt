@@ -1,0 +1,44 @@
+我正在尝试转置一个 2x3 二维数组（行变为列，反之亦然）。用户输入 6 个数字，然后我必须完成其余的工作。我不允许导入任何库。这是我到目前为止所拥有的：
+
+array1 = [[0 for column in range (2)] for row in range (3)]
+
+for i in range (3):
+    for j in range (2):
+        array1[i][j] = int(input())
+
+for i in range (3):
+    for j in range (2):
+        if j == 0:
+            print (array1[i][j], end = " ")
+        else:
+            print (array1[i][j])
+此代码存储并打印一个 2x3 2D 数组，对让我进一步了解有什么帮助吗？
+
+
+解决方案
+如果打印是您唯一关心的问题，那么以下代码会有所帮助：
+
+array1 = [[0 for column in range (2)] for row in range (3)]
+
+for i in range (3):
+    for j in range (2):
+        array1[i][j] = int(input())
+
+for i in range (3):
+    for j in range (2):
+        if j == 0:
+            print (array1[i][j], end = " ")
+        else:
+            print (array1[i][j])
+
+for j in range (2):
+    for i in range (3):
+        if i == 0 or i == 1:
+            print (array1[i][j], end = " ")
+        else:
+            print (array1[i][j])
+但是，如果您需要存储数组的转置，您可以使用：
+
+import numpy as np
+new_array = np.array(array1)
+new_array = new_array.T
