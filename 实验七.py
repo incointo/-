@@ -2,7 +2,7 @@ import requests,pyquery,os,csv,matplotlib
 os.makedirs('logo',exist_ok=True)
 url = 'https://www.shanghairanking.cn/rankings/bcur/2022'
 heards = {
-    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.42'
+    'User-Agent':
 }
 res = requests.get(url=url,headers=heards)
 res.encoding = res.apparent_encoding
